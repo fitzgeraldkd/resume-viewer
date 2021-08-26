@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <div class="controls">
+            <div class="control-container">
+                <div id="control-prevpage" class="control-icon"><i class="bi bi-arrow-up-square"></i></div>
+            </div>
+            <div class="control-container">
+                <div id="control-nextpage" class="control-icon"><i class="bi bi-arrow-down-square"></i></div>
+            </div>
+            <div class="control-container">
+                <div id="control-zoomfit" class="control-icon"><i class="bi bi-fullscreen"></i></div>
+            </div>
+            <div class="control-container">
+                <div id="control-zoomin" class="control-icon"><i class="bi bi-plus"></i></div>
+            </div>
+            <div class="control-zoomslider-container">
+                <div class="control-zoomslider-subcontainer">
+                    <input id="control-zoomslider" orient="vertical" type="range" min="1" max="200">
+                </div>
+                <!-- <div id="control-zoomslider-bar" class="control-icon">
+                    <div id="control-zoomslider-dot" class="control-icon"></div>
+                </div> -->
+                
+            </div>
+            <div class="control-container">
+                <div id="control-zoomout" class="control-icon"><i class="bi bi-dash"></i></div>
+            </div>
+        </div>
+
+        <div class="document">
+            <div class="page">
+                <div class="page-content">
+                    <h1>Kenneth David Fitzgerald</h1>
+                </div>
+            </div>
+            <div class="page">
+                <div class="page-content">
+                    <h1>Page 2</h1>
+                </div>
+            </div>
+        </div>
+
+        <script src="./node_modules/jquery/dist/jquery.js"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,104 @@
+:root {
+    --vertical-margin: 50px;
+    --zoom-factor: 100;
+    --pixels-per-inch: 96px;
+    /* --page-width: calc(var(--pixels-per-inch) * 8.5);
+    --page-height: calc(var(--pixels-per-inch) * 11); */
+    --page-width: calc(var(--pixels-per-inch) * 8.5 * var(--zoom-factor) / 100);
+    --page-height: calc(var(--pixels-per-inch) * 11 * var(--zoom-factor) / 100);
+    --page-margin: calc(var(--pixels-per-inch) * 0.5 * var(--zoom-factor) / 100);
+}
+
+body {
+    background-image: repeating-linear-gradient(135deg, #6a6a6a, #6a6a6a 30px, #707070 30px, #707070 60px);
+    background-attachment: fixed;
+    margin: 0;
+}
+
+.controls {
+    width: 45px;
+    /* height: 100px; */
+    padding: 5px;
+    background-color: #333;
+    border-radius: 0px 5px 5px 0px;
+    position: fixed;
+    left: 0;
+    z-index: 1;
+
+}
+
+.control-container {
+    padding: 5px;
+    text-align: center;
+    border-radius: 3px;
+    float: right;
+}
+
+.control-container:hover {
+    background-color: #444;
+}
+
+.control-icon {
+    color: #bbb;
+    font-size: 30px;
+}
+
+.control-icon:hover {
+    color: white;
+}
+
+.control-zoomslider-container {
+    width: 40px;
+    float: right;
+}
+
+.control-zoomslider-subcontainer {
+    margin: auto;
+    width: fit-content;
+}
+
+#control-zoomslider {
+    height: 100px;
+    width: 10px;
+    /* background-color: #111; */
+    border-radius: 5px;
+    margin: auto;
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+}
+
+/* .document {
+    transform-origin: top center;
+    transform: scale(calc(var(--zoom-factor) / 100));
+} */
+
+.page {
+    width: var(--page-width);
+    height: var(--page-height);
+    background-color: white;
+    box-sizing: border-box;
+    padding: var(--page-margin);
+    margin: auto;
+    margin-top: var(--vertical-margin);
+    margin-bottom: var(--vertical-margin);
+    overflow: hidden;
+    box-shadow: 0 0 20px 10px #383838;
+}
+
+.page-content {
+    /* transform-origin: -48px -48px; */
+    transform-origin: top left;
+    transform: scale(calc(var(--zoom-factor) / 100));
+    width: 100%;
+    height: 100%;
+}
+
+@media print {
+    .controls {
+        display: none;
+    }
+
+    .page {
+        margin: 0;
+    }
+}
