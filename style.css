@@ -1,12 +1,21 @@
 :root {
+    --accent-color: rgb(15, 95, 15);
     --vertical-margin: 50px;
     --zoom-factor: 100;
     --pixels-per-inch: 96px;
-    /* --page-width: calc(var(--pixels-per-inch) * 8.5);
-    --page-height: calc(var(--pixels-per-inch) * 11); */
-    --page-width: calc(var(--pixels-per-inch) * 8.5 * var(--zoom-factor) / 100);
-    --page-height: calc(var(--pixels-per-inch) * 11 * var(--zoom-factor) / 100);
-    --page-margin: calc(var(--pixels-per-inch) * 0.5 * var(--zoom-factor) / 100);
+    --page-width: calc(var(--pixels-per-inch) * 8.5);
+    --page-height: calc(var(--pixels-per-inch) * 11);
+    --page-margin: calc(var(--pixels-per-inch) * 0.5);
+    /* --page-width: calc(var(--pixels-per-inch) * 8.5 * var(--zoom-factor) / 100);
+    --page-height: calc(var(--pixels-per-inch) * 11 * var(--zoom-factor) / 100); */
+    /* --page-margin: calc(var(--pixels-per-inch) * 0.5 * var(--zoom-factor) / 100); */
+    --page-content-width: calc(var(--page-width) - 2 * var(--page-margin));
+    --page-content-height: calc(var(--page-height) - 2 * var(--page-margin));
+    --header-height: calc(var(--pixels-per-inch) * 1);
+    --footer-height: calc(var(--pixels-per-inch) * 0.5);
+    --body-height: calc(var(--page-content-height) - var(--header-height) - var(--footer-height));
+    --leftcolumn-width: calc(var(--pixels-per-inch) * 5);
+    --rightcolumn-width: calc(var(--page-content-width) - var(--leftcolumn-width));
 }
 
 body {
@@ -17,7 +26,6 @@ body {
 
 .controls {
     width: 45px;
-    /* height: 100px; */
     padding: 5px;
     background-color: #333;
     border-radius: 0px 5px 5px 0px;
@@ -55,6 +63,7 @@ body {
 .control-zoomslider-subcontainer {
     margin: auto;
     width: fit-content;
+    text-align: center;
 }
 
 #control-zoomslider {
@@ -67,17 +76,15 @@ body {
     -webkit-appearance: slider-vertical; /* WebKit */
 }
 
-/* .document {
-    transform-origin: top center;
-    transform: scale(calc(var(--zoom-factor) / 100));
-} */
-
 .page {
-    width: var(--page-width);
-    height: var(--page-height);
+    /* width: var(--page-width);
+    height: var(--page-height); */
+    width: calc(var(--page-width) * var(--zoom-factor) / 100);
+    height: calc(var(--page-height) * var(--zoom-factor) / 100);
     background-color: white;
     box-sizing: border-box;
-    padding: var(--page-margin);
+    /* padding: var(--page-margin); */
+    padding: calc(var(--page-margin) * var(--zoom-factor) / 100);
     margin: auto;
     margin-top: var(--vertical-margin);
     margin-bottom: var(--vertical-margin);
@@ -89,8 +96,92 @@ body {
     /* transform-origin: -48px -48px; */
     transform-origin: top left;
     transform: scale(calc(var(--zoom-factor) / 100));
-    width: 100%;
-    height: 100%;
+    width: var(--page-content-width);
+    height: var(--page-content-height);
+}
+
+.page-header {
+    width: var(--page-content-width);
+    height: var(--header-height);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.page-leftcolumn {
+    width: var(--leftcolumn-width);
+    height: var(--body-height);
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    box-sizing: border-box;
+    padding-right: 25px;
+}
+
+.page-rightcolumn {
+    width: var(--rightcolumn-width);
+    height: var(--body-height);
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+}
+
+.page-footer {
+    width: var(--page-content-width);
+    height: var(--footer-height);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.title {
+    font-size: 27px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.section {
+    margin-bottom: 25px;
+}
+
+.section-header {
+    color: var(--accent-color);
+    font-size: 19px;
+    font-weight: bolder;
+    font-family: "Courier New", monospace;
+    margin-bottom: 10px;
+}
+
+.section-item {
+    margin-bottom: 10px;
+}
+
+.section-item-title {
+    font-weight: bold;
+}
+
+.section-item-subtitle {
+    font-style: italic;
+    padding-left: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+li {
+    padding-left: 1.7em;
+    text-indent: -1.7em;
+}
+
+li::before {
+    content: ">>";
+    padding-right: 8px;
+    color: var(--accent-color);
+    font-family: "Courier New", monospace;
+    vertical-align: top;
 }
 
 @media print {
