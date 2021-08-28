@@ -22,6 +22,7 @@ body {
     background-image: repeating-linear-gradient(135deg, #6a6a6a, #6a6a6a 30px, #707070 30px, #707070 60px);
     background-attachment: fixed;
     margin: 0;
+    min-width: calc(var(--page-width) * var(--zoom-factor) / 100 + 2 * 96px);
 }
 
 .controls {
@@ -184,12 +185,50 @@ li::before {
     vertical-align: top;
 }
 
+@media only screen and (max-width: 768px) {
+    .controls {
+        width: 100%;
+        height: 55px;
+        border-radius: 5px 5px 0 0;
+        bottom: 0;
+        box-sizing: border-box;
+    }
+
+    .control-container {
+        float: none;
+        display: inline-block;
+    }
+
+    .control-zoomslider-container {
+        width: initial;
+        float: none;
+        display: inline-block;
+    }
+
+    #control-zoomslider {
+        height: 10px;
+        width: 100px;
+        writing-mode: initial; /* IE */
+        -webkit-appearance: initial; /* WebKit */
+    }
+}
+
 @media print {
+    body {
+        min-width: initial;
+    }
+    
     .controls {
         display: none;
     }
 
     .page {
         margin: 0;
+        box-shadow: initial;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
     }
 }
