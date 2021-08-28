@@ -8,9 +8,6 @@
     --page-width: calc(var(--pixels-per-inch) * 8.5);
     --page-height: calc(var(--pixels-per-inch) * 11);
     --page-margin: calc(var(--pixels-per-inch) * 0.5);
-    /* --page-width: calc(var(--pixels-per-inch) * 8.5 * var(--zoom-factor) / 100);
-    --page-height: calc(var(--pixels-per-inch) * 11 * var(--zoom-factor) / 100); */
-    /* --page-margin: calc(var(--pixels-per-inch) * 0.5 * var(--zoom-factor) / 100); */
     --page-content-width: calc(var(--page-width) - 2 * var(--page-margin));
     --page-content-height: calc(var(--page-height) - 2 * var(--page-margin));
     --header-height: calc(var(--pixels-per-inch) * 1);
@@ -72,7 +69,6 @@ body {
 #control-zoomslider {
     height: 100px;
     width: 10px;
-    /* background-color: #111; */
     border-radius: 5px;
     margin: auto;
     writing-mode: bt-lr; /* IE */
@@ -80,13 +76,10 @@ body {
 }
 
 .page {
-    /* width: var(--page-width);
-    height: var(--page-height); */
     width: calc(var(--page-width) * var(--scale-factor));
     height: calc(var(--page-height) * var(--scale-factor));
     background-color: white;
     box-sizing: border-box;
-    /* padding: var(--page-margin); */
     padding: calc(var(--page-margin) * var(--scale-factor));
     margin: auto;
     margin-top: var(--vertical-margin);
@@ -96,7 +89,6 @@ body {
 }
 
 .page-content {
-    /* transform-origin: -48px -48px; */
     transform-origin: top left;
     transform: scale(calc(var(--scale-factor)));
     width: var(--page-content-width);

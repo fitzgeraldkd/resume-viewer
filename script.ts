@@ -8,16 +8,12 @@ $(function() {
         let newZoom: number = parseInt($(":root").css("--zoom")) + 5;
         newZoom = Math.min(newZoom, parseInt($("#control-zoomslider").attr("max")));
         setZoom(newZoom);
-        // $("#control-zoomslider").val(String(newZoom));
-        // $(":root").css("--zoom", newZoom);
     });
     
     $(".control-zoomout").on("click", function() {
         let newZoom: number = parseInt($(":root").css("--zoom")) - 5;
         newZoom = Math.max(newZoom, parseInt($("#control-zoomslider").attr("min")));
         setZoom(newZoom);
-        // $("#control-zoomslider").val(String(newZoom));
-        // $(":root").css("--zoom", newZoom);
     });
 
     $(".control-zoomfit").on("click", function () {
