@@ -1,6 +1,7 @@
 :root {
     --accent-color: rgb(15, 95, 15);
     --vertical-margin: 50px;
+    --horizontal-margin: 96px;
     --zoom: 100;
     --scale-factor: calc(var(--zoom) / 100);
     --pixels-per-inch: 96px;
@@ -23,7 +24,7 @@ body {
     background-image: repeating-linear-gradient(135deg, #6a6a6a, #6a6a6a 30px, #707070 30px, #707070 60px);
     background-attachment: fixed;
     margin: 0;
-    min-width: calc(var(--page-width) * var(--scale-factor) + 2 * 96px);
+    min-width: calc(var(--page-width) * var(--scale-factor) + 2 * var(--horizontal-margin));
 }
 
 .controls {
