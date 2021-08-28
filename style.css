@@ -1,7 +1,8 @@
 :root {
     --accent-color: rgb(15, 95, 15);
     --vertical-margin: 50px;
-    --zoom-factor: 100;
+    --zoom: 100;
+    --scale-factor: calc(var(--zoom) / 100);
     --pixels-per-inch: 96px;
     --page-width: calc(var(--pixels-per-inch) * 8.5);
     --page-height: calc(var(--pixels-per-inch) * 11);
@@ -22,7 +23,7 @@ body {
     background-image: repeating-linear-gradient(135deg, #6a6a6a, #6a6a6a 30px, #707070 30px, #707070 60px);
     background-attachment: fixed;
     margin: 0;
-    min-width: calc(var(--page-width) * var(--zoom-factor) / 100 + 2 * 96px);
+    min-width: calc(var(--page-width) * var(--scale-factor) + 2 * 96px);
 }
 
 .controls {
@@ -80,12 +81,12 @@ body {
 .page {
     /* width: var(--page-width);
     height: var(--page-height); */
-    width: calc(var(--page-width) * var(--zoom-factor) / 100);
-    height: calc(var(--page-height) * var(--zoom-factor) / 100);
+    width: calc(var(--page-width) * var(--scale-factor));
+    height: calc(var(--page-height) * var(--scale-factor));
     background-color: white;
     box-sizing: border-box;
     /* padding: var(--page-margin); */
-    padding: calc(var(--page-margin) * var(--zoom-factor) / 100);
+    padding: calc(var(--page-margin) * var(--scale-factor));
     margin: auto;
     margin-top: var(--vertical-margin);
     margin-bottom: var(--vertical-margin);
@@ -96,7 +97,7 @@ body {
 .page-content {
     /* transform-origin: -48px -48px; */
     transform-origin: top left;
-    transform: scale(calc(var(--zoom-factor) / 100));
+    transform: scale(calc(var(--scale-factor)));
     width: var(--page-content-width);
     height: var(--page-content-height);
 }
@@ -214,10 +215,14 @@ li::before {
 }
 
 @media print {
+    :root {
+        --scale-factor: 1;
+    }
+
     body {
         min-width: initial;
     }
-    
+
     .controls {
         display: none;
     }
