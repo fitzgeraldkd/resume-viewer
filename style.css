@@ -13,8 +13,8 @@
     --header-height: calc(var(--pixels-per-inch) * 1);
     --footer-height: calc(var(--pixels-per-inch) * 0.5);
     --body-height: calc(var(--page-content-height) - var(--header-height) - var(--footer-height));
-    --leftcolumn-width: calc(var(--pixels-per-inch) * 5);
-    --rightcolumn-width: calc(var(--page-content-width) - var(--leftcolumn-width));
+    --rightcolumn-width: calc(var(--pixels-per-inch) * 5);
+    --leftcolumn-width: calc(var(--page-content-width) - var(--rightcolumn-width));
 }
 
 body {
@@ -110,7 +110,7 @@ body {
     top: var(--header-height);
     left: 0;
     box-sizing: border-box;
-    padding-right: 25px;
+    /* padding-right: 25px; */
 }
 
 .page-rightcolumn {
@@ -119,6 +119,8 @@ body {
     position: absolute;
     top: var(--header-height);
     right: 0;
+    padding-left: 25px;
+    box-sizing: border-box;
 }
 
 .page-footer {
@@ -134,10 +136,18 @@ body {
     text-align: center;
     font-weight: bolder;
     font-family: 'Belgrano', serif;
+    text-decoration: underline;
 }
 
 .section {
     margin-bottom: 25px;
+    /* border-right-style: solid;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: lightgrey; */
+    box-shadow: 5px 5px 5px lightgrey;
+    padding-bottom: 10px;
+    padding-right: 10px;
 }
 
 .section-header {
@@ -161,6 +171,14 @@ body {
     padding-left: 10px;
 }
 
+.divider {
+    font-family: "Courier New", monospace;
+    color: rgb(29, 48, 29);
+    margin-top: 12px;
+    margin-bottom: 12px;
+    display: none;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -178,6 +196,8 @@ li::before {
     color: var(--accent-color);
     font-family: "Courier New", monospace;
     vertical-align: top;
+    font-size: 10pt;
+    padding-top: 1pt;
 }
 
 @media only screen and (max-width: 768px) {
