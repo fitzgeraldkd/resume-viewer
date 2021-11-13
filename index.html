@@ -13,17 +13,18 @@
     </head>
     <body>
         <div class="controls">
-            <div class="control-container">
+            <!-- <div class="control-container">
                 <div id="control-prevpage" class="control-icon"><i class="bi bi-arrow-up-square"></i></div>
             </div>
             <div class="control-container">
                 <div id="control-nextpage" class="control-icon"><i class="bi bi-arrow-down-square"></i></div>
-            </div>
+            </div> -->
             <div class="control-container">
                 <div id="control-zoomfit" class="control-icon control-zoomfit"><i class="bi bi-fullscreen"></i></div>
             </div>
             <div class="control-container">
-                <div id="control-zoomin" class="control-icon control-zoomin"><i class="bi bi-plus"></i></div>
+                <div class="control-icon control-zoomin mobile-hide"><i class="bi bi-plus"></i></div>
+                <div class="control-icon control-zoomout mobile-show"><i class="bi bi-dash"></i></div>
             </div>
             <div class="control-zoomslider-container">
                 <div class="control-zoomslider-subcontainer">
@@ -31,7 +32,8 @@
                 </div>
             </div>
             <div class="control-container">
-                <div id="control-zoomout" class="control-icon control-zoomout"><i class="bi bi-dash"></i></div>
+                <div class="control-icon control-zoomout mobile-hide"><i class="bi bi-dash"></i></div>
+                <div class="control-icon control-zoomin mobile-show"><i class="bi bi-plus"></i></div>
             </div>
         </div>
         <div class="sceen"></div>
@@ -42,7 +44,7 @@
                         <div class="title">&nbsp;Kenneth D. Fitzgerald&nbsp;</div>
                         <div class="contact">
                             <span><i class="bi bi-envelope-fill"></i> <a href="mailto:fitzgeraldkd@gmail.com">fitzgeraldkd@gmail.com</a></span> |
-                            <span><i class="bi bi-telephone-fill"></i> Phone Number</span> |
+                            <span><i class="bi bi-telephone-fill"></i> 248.270.7920</span> |
                             <span><i class="bi bi-pin-map-fill"></i> Warren, MI</span>
                             <br>
                             <span><i class="bi bi-house-fill"></i> <a href="http://www.kdfitz.com" target="_blank">kdfitz.com</a></span> |
@@ -61,21 +63,60 @@
                             <div class="section-header"># projects</div>
 
                             <div class="section-item">
-                                <div class="section-item-title">Dot Matrix Animator</div>
+                                <div class="section-item-title">
+                                    Dot Matrix Animator |
+                                    <span class="section-item-link">
+                                        <a href="https://github.com/fitzgeraldkd/dot-matrix" target="_blank">github.com/fitzgeraldkd/dot-matrix</a>
+                                    </span>
+                                </div>
                                 <!-- <div class="section-item-subtitle"></div> -->
                                 <ul>
-                                    <li>Ruby</li>
+                                    <li>Created a program that generates an animated dot matrix GIF using Ruby with the RMagick gem</li>
+                                    <li>Provided command-line interface with the Thor gem for user input</li>
                                 </ul>
                             </div>
 
                             <div class="section-item">
-                                <div class="section-item-title">Spacebook (Python Discord Summer Code Jam 2020)</div>
-                                <div class="section-item-subtitle">Second Runner Up (August 2020)</div>
+                                <div class="section-item-title">
+                                    Going For Gold |
+                                    <span class="section-item-link">
+                                        <a href="https://goingforgold.netlify.app/" target="_blank">goingforgold.netlify.app/</a>
+                                    </span>
+                                </div>
+                                <!-- <div class="section-item-subtitle">Flatiron School (October 2021)</div> -->
                                 <ul>
-                                    <li>Built a functioning web app using Django in ten days</li>
-                                    <li>Collaborated with a randomly-selected team from across the nation</li>
-                                    <li>Coordinated app changes with teammates, leveraging GitHub as a VCS</li>
-                                    <li>Utilized API from NASA to retrieve photos taken by Mars rovers</li>
+                                    <li>Deployed a Jeopardy-like game with React as the front-end</li>
+                                    <li>Implemented React Router with nested routes in a single-page application</li>
+                                </ul>
+                            </div>
+
+                            <div class="section-item">
+                                <div class="section-item-title">
+                                    Lost Languages |
+                                    <span class="section-item-link">
+                                        <a href="https://lost-languages.netlify.app/" target="_blank">lost-languages.netlify.app/</a>
+                                    </span>
+                                </div>
+                                <!-- <div class="section-item-subtitle">Flatiron School (October 2021)</div> -->
+                                <ul>
+                                    <li>Developed an app with React and TypeScript for language-learners to practice writing translations</li>
+                                    <li>Utilized a public API to fetch photos as writing prompts for the user</li>
+                                </ul>
+                            </div>
+
+                            <div class="section-item">
+                                <div class="section-item-title">
+                                    Spacebook |
+                                    <span class="section-item-link">
+                                        <a href="https://github.com/fitzgeraldkd/Spacebook" target="_blank">github.com/fitzgeraldkd/Spacebook</a>
+                                    </span>
+                                </div>
+                                <div class="section-item-subtitle">Python Discord Summer Code Jam, Second Runner Up (August 2020)</div>
+                                <ul>
+                                    <!-- <li>Built a functioning web app using Django in ten days</li> -->
+                                    <li>Collaborated with a randomly-selected team from across the nation to develop a Django web app</li>
+                                    <li>Coordinated app changes remotely with teammates, leveraging GitHub as a VCS</li>
+                                    <li>Utilized public API from NASA to retrieve photos taken by Mars rovers</li>
                                 </ul>
                             </div>
 
@@ -89,48 +130,61 @@
                                 <div class="section-item-subtitle">Mechanical Engineer (May 2016 - January 2020)</div>
                                 <div class="section-item-subtitle">Mechanical Engineer Co-Op (January 2014 - May 2016)</div>
                                 <ul>
-                                    <li>Automated data entry tasks utilizing Python and Dynamo visual scripting</li>
-                                    <li>Communicated technical information to clients with varying levels of technical expertise</li>
-                                    <li>Coordinated mechanical designs with design teams from multiple firms</li>
-                                    <li>Developed Excel spreadsheets for company to use as standard calculation tools</li>
-                                    <li>Extended functionality of Autodesk Revit with Python, pyRevit, and the Revit API</li>
+                                    <li>Automated data entry tasks utilizing Python and Dynamo BIM visual scripting</li>
+                                    <li>Communicated technical information to shareholders with varying levels of technical expertise</li>
+                                    <!-- <li>Coordinated mechanical designs with design teams from multiple firms</li> -->
+                                    <!-- <li>Developed Excel spreadsheets for company to use as standard calculation tools</li> -->
+                                    <li>Extended functionality of Autodesk Revit by utilizing Python and the Revit API</li>
                                     <li>Completed projects while working fully remote during COVID-19 pandemic</li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="column-container">
-                            <div class='page-leftcolumn'>
+                            <div class='column'>
                                 <div id="skills" class="section">
                                     <div class="section-header"># skills</div>
+                                    <div class="section-item-title">Proficient</div>
+                                    <span class="indent">JavaScript | TypeScript | React | Ruby</span>
+                                    <!-- <br /><br /> -->
+                                    <div class="section-item-title" style="margin-top: 5px;">Familiar</div>
+                                    <span class="indent">Sinatra | SQL | Python | Django | jQuery</span>
+                                    <!-- <br /><br /> -->
+                                    <div class="section-item-title" style="margin-top: 5px;">Learning</div>
+                                    <span class="indent">Ruby On Rails | PostgreSQL</span>
+                                    
+                                    <!-- <div class="section-item-title">Front-End</div>
+                                    JavaScript | TypeScript | React
+                                    <br /><br />
+                                    <div class="section-item-title">Back-End</div>
+                                    Ruby | Python | Django -->
 
-                                    <div class="column-container">
-                                        <div class="page-leftcolumn">
+                                    <!-- <div class="column-container">
+                                        <div class="column">
                                             <div class="section-item">
                                                 <div class="section-item-title">Front-End</div>
+                                                JavaScript | TypeScript | React
                                                 <ul>
                                                     <li>JavaScript</li>
                                                     <li>TypeScript</li>
                                                     <li>React</li>
-                                                    <li>jQuery</li>
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="page-rightcolumn">
+                                        <div class="column">
                                             <div class="section-item">
                                                 <div class="section-item-title">Back-End</div>
                                                 <ul>
                                                     <li>Ruby</li>
-                                                    <li>Ruby on Rails</li>
                                                     <li>Python</li>
                                                     <li>Django</li>
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
-                            <div class='page-rightcolumn'>
+                            <div class='column' style="flex: 0.8;">
                                 <div id="education" class="section">
                                     <div class="section-header"># education</div>
                                     <div class="section-item">
@@ -154,11 +208,7 @@
                     </div>
                 </div>
             </div>
-            <div class="page">
-                <div class="page-content">
-                    <h1>Page 2</h1>
-                </div>
-            </div>
+            
         </div>
 
         <script src="./node_modules/jquery/dist/jquery.js"></script>

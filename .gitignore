@@ -116,3 +116,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+cover-letter.html
+references.html
+signature.*
