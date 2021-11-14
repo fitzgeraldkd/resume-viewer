@@ -330,7 +330,7 @@ li::before {
         display: none;
     }
 
-    .page {
+    .page, .page:last-of-type {
         margin: 0;
         box-shadow: initial;
     }
