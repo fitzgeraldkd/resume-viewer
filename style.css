@@ -23,6 +23,7 @@ body {
     background-attachment: fixed;
     margin: 0;
     min-width: calc(var(--page-width) * var(--scale-factor) + 2 * var(--horizontal-margin));
+    font-family: 'Times New Roman', Times, serif;
 }
 
 a {
